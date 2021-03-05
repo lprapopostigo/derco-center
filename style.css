@@ -104,6 +104,8 @@ main #landing #slider img {
           flex: 1 0 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: opacity 2.5s;
+  transition: opacity 2.5s;
 }
 
 main #landing ul {
