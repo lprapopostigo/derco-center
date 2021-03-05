@@ -1,0 +1,75 @@
+@import "global";
+@mixin flex-center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+@mixin flex($direction) {
+  flex-direction: $direction;
+  display: flex;
+}
+@mixin background-img($url) {
+  background: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header {
+  background-color: #d50000;
+  min-height: 10vh;
+  @include flex-center(row);
+  nav {
+    width: 90vw;
+    @include flex-center(row);
+    div {
+      flex-grow: 1;
+      img {
+        max-height: 80px;
+        margin-right: 4rem;
+      }
+    }
+    ul {
+      flex-grow: 1;
+      @include flex(row);
+      list-style: none;
+      align-items: center;
+      justify-content: space-evenly;
+      font-size: 2.4rem;
+      li {
+        font-weight: 600;
+        color: #fafafa;
+      }
+    }
+  }
+}
+
+main {
+  #landing {
+    @include flex(column);
+    #slider {
+      @include background-img("./car1.jpg");
+      min-height: 90vh;
+      position: relative;
+      ul {
+        position: absolute;
+        @include flex(row);
+        font-size: 4.8rem;
+        list-style: none;
+        text-align: center;
+        min-height: 20vh;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        bottom: 0%;
+        background-color: rgba($color: #07578a, $alpha: 0.25);
+        li {
+          text-shadow: 5px 0px 4px rgba($color: #212121, $alpha: 0.25);
+          color: #fafafa;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
